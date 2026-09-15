@@ -8,7 +8,10 @@ public class Main{
             File file = new File("testo.txt");
             Scanner s = new Scanner(file);
             while(s.hasNextLine()){
-                System.out.println(s.nextLine());
+                while(s.hasNext()){
+                    String word = s.next();
+                    System.out.println(word);
+                }
             }
             s.close();
         }
