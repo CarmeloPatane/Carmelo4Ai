@@ -5,9 +5,11 @@ import java.io.FileNotFoundException;
 public class Main{
     public static void main(String[] args){
         try{
-            File file = new File("test.txt");
+            File file = new File("testo.txt");
             Scanner s = new Scanner(file);
-            System.out.println(s.nextLine());
+            while(s.hasNextLine()){
+                System.out.println(s.nextLine());
+            }
             s.close();
         }
         catch(FileNotFoundException e){
