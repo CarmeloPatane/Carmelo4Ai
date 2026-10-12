@@ -1,18 +1,38 @@
-public class Parola {
+public class Parola implements Comparable<Parola> {
     private String testo;
     private int contatore;
-    public Parola(String testo, int contatore){
+    
+    // Puntatori della lista doppiamente linkata
+    public Parola prev;
+    public Parola next;
+
+    public Parola(String testo) {
         this.testo = testo;
-        this.contatore = contatore;
+        this.contatore = 1;
+        this.prev = null;
+        this.next = null;
     }
-    public Parola(String testo){
-        this(testo, 1);
+
+    public String getTesto() {
+        return testo;
     }
-    public void incrementa(){
-        this.contatore ++;
+
+    public int getContatore() {
+        return contatore;
     }
-    @Override 
-    public String toString(){
-        return this.testo + ": " + this.contatore;
+
+    public void incrementa() {
+        this.contatore++;
+    }
+
+    @Override
+    public int compareTo(Parola altra) {
+        return this.testo.compareTo(altra.testo);
+    }
+
+    @Override
+    public String toString() {
+        return testo + " (" + contatore + ")";
     }
 }
+
