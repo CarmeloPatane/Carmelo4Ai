@@ -72,5 +72,16 @@ public class ListaDoppiaLinkata {
             corrente = corrente.next;
         }
     }
+    public void stampaFiltrataReverse(int tot) {
+        Parola corrente = tail;
+        System.out.println("--- Parole presenti almeno " + tot + " volte (in ordine alfabetico) ---");
+        while (corrente != null) {
+            if (corrente.getContatore() >= tot) {
+                //System.out.println();
+                System.out.println(corrente);
+            }
+            corrente = corrente.prev;
+        }
+    }
 }
 

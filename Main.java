@@ -42,8 +42,8 @@ public class Main {
             }
 
             // Stampa le parole che compaiono almeno 'tot' volte (es. tot = 2)
-            int tot = 2;
-            lista.stampaFiltrata(tot);
+            int tot = 10;
+            lista.stampaFiltrataReverse(tot);
 
             scanner.close();
             writer.close();
